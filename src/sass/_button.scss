@@ -1,0 +1,15 @@
+@import './vars';
+
+.btn {
+  font-weight: 400;
+	font-size: 17px;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	color: $white-color;
+	background-color: $accent-color;
+	cursor: pointer;
+	&:active {
+		filter: grayscale(10%);
+	}
+}

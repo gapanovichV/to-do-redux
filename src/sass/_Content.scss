@@ -1,0 +1,30 @@
+@import './vars';
+
+.content {
+	box-sizing: border-box;
+	float: left;
+	width: 85%;
+	padding: 30px;
+	&-title {
+		color: $white-color;
+		margin: 15px 0 30px;
+	}
+
+	&-card {
+		display: flex;
+		flex-direction: row;
+    flex-wrap: wrap;
+		gap: 20px;
+	}
+}
+
+.upper {
+	&-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&-btn {
+			padding: 13px 25px;
+		}
+	}
+}

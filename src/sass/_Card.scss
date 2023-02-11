@@ -1,0 +1,51 @@
+@import './vars';
+
+.card {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	max-width: 300px;
+	min-height: 250px;
+	background-color: $accent-color;
+	border-radius: 10px;
+	padding: 20px 15px;
+	&-text {
+		&-title {
+			color: $white-color;
+			margin-bottom: 10px;
+		}
+		&-descr {
+			height: 120px;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			background-color: $base-color;
+		}
+		::-webkit-scrollbar {
+			width: 5px;
+		}
+	}
+	&-icon {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&-status {
+			background-color: $copleted-color;
+			color: $base-color;
+			padding: 8px;
+			border-radius: 20px;
+		}
+	}
+	&-date {
+		color: $white-color;
+	}
+	hr {
+		width: 100%;
+		margin: 15px 0;
+		border: none;
+		border-top: 1px dashed $text-color;
+	}
+}
