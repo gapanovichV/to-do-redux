@@ -1,11 +1,13 @@
 import React from 'react';
 
-const Sidebar = () => {
+const Sidebar = ({ setModalActive }) => {
 	return (
 		<div className="wrapper">
 			<div className="upper-block">
 				<h2 className="upper-logo">TO-DO List</h2>
-				<button className="btn upper-btn">Add new task</button>
+				<button className="btn upper-btn" onClick={() => setModalActive(true)}>
+					Add new task
+				</button>
 			</div>
 			<div className="task">
 				<ul className="task-list">
