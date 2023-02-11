@@ -42,12 +42,11 @@
 			color: $text-color;
 		}
 	}
-}
-
-.active {
-	background-color: #1a253a;
-	border-right: 3px solid $white-color;
-	a {
-		color: $white-color;
-	}
+  .active {
+    background-color: #1a253a;
+    border-right: 3px solid $white-color;
+    a {
+      color: $white-color;
+    }
+  }
 }
