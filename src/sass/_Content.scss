@@ -1,8 +1,10 @@
 .content {
 	box-sizing: border-box;
 	float: left;
-	width: 85%;
+  width: 85%;
 	padding: 30px;
+  display: flex;
+  flex-direction: column;
 	&-title {
 		color: $white-color;
 		margin: 15px 0 30px;
