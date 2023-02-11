@@ -17,11 +17,13 @@
 		width: 400px;
 	}
 	h2 {
+    color: $base-color;
 		margin-bottom: 20px;
 	}
 	&-add {
 		&-title,
 		&-descr {
+			color: $base-color;
 			display: flex;
 			flex-direction: column;
 			margin-bottom: 20px;
