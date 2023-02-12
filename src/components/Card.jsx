@@ -1,13 +1,17 @@
 import React from 'react';
+import cn from 'classnames';
 
-const Card = () => {
+import { useDispatch } from 'react-redux';
+import { delTask, toggleComplete } from '../redux/todo/todoSlice';
+
+const Card = ({ id, title, descr, complete }) => {
+	const dispatch = useDispatch();
+
 	return (
 		<div className="card">
 			<div className="card-text">
-				<h4 className="card-text-title">Task 4</h4>
-				<p className="card-text-descr">
-        This is the description for this tas
-        </p>
+				<h4 className="card-text-title">{title}</h4>
+				<p className="card-text-descr">{descr}</p>
 			</div>
 			<div className="card-under">
 				<div className="card-date">
@@ -15,8 +19,13 @@ const Card = () => {
 					<hr />
 				</div>
 				<div className="card-icon">
-					<div className="card-icon-status">{true ? 'completed' : 'uncompleted'}</div>
-					<a href="/">Delete</a>
+					<button
+						onClick={() => dispatch(toggleComplete({ id }))}
+						className={cn('card-icon-status', { unyellow: !complete })}
+					>
+						{complete ? 'completed' : 'uncompleted'}
+					</button>
+					<button onClick={() => dispatch(delTask({ id }))}>Delete</button>
 				</div>
 			</div>
 		</div>
