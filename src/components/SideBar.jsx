@@ -1,5 +1,7 @@
 import React from 'react';
 
+import List from './List';
+
 const Sidebar = ({ setModalActive }) => {
 	return (
 		<div className="wrapper">
@@ -11,21 +13,9 @@ const Sidebar = ({ setModalActive }) => {
 			</div>
 			<div className="task">
 				<ul className="task-list">
-					<li className="task-list-li active">
-						<a className="task-list-item" href="/">
-							All tasks
-						</a>
-					</li>
-					<li className="task-list-li">
-						<a className="task-list-item" href="/">
-							Uncompleted tasks
-						</a>
-					</li>
-					<li className="task-list-li">
-						<a className="task-list-item" href="/">
-							Tasks done
-						</a>
-					</li>
+					<List status={'all'}>All tasks</List>
+					<List status={'active'}>Uncompleted tasks</List>
+					<List status={'completed'}>Completed tasks</List>
 				</ul>
 			</div>
 		</div>

@@ -18,7 +18,7 @@
 	&-logo {
 		font-weight: 700;
 		color: $text-color;
-    margin-bottom: 15px;
+		margin-bottom: 15px;
 	}
 	&-btn {
 		width: 100%;
@@ -38,13 +38,17 @@
 			padding-left: 15px;
 			font-weight: 500;
 			color: $text-color;
+			border: none;
+			border: 0;
+			background: transparent;
+      cursor: pointer;
 		}
 	}
-  .active {
-    background-color: #1a253a;
-    border-right: 3px solid $white-color;
-    a {
-      color: $white-color;
-    }
-  }
+	.active {
+		background-color: #1a253a;
+		border-right: 3px solid $white-color;
+		a {
+			color: $white-color;
+		}
+	}
 }
