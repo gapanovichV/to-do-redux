@@ -8,6 +8,7 @@ const Content = ({ setModalActive }) => {
 	const dateNow = new Date().toLocaleDateString('en-US', options);
 
 	const { todo, filterBy } = useSelector((state) => state);
+
 	return (
 		<div className="content">
 			<div className="upper-content">
@@ -30,15 +31,19 @@ const Content = ({ setModalActive }) => {
 							return !obj.complete;
 						}
 					})
-					.map((obj) => (
-						<Card
-							key={obj.id}
-							id={obj.id}
-							title={obj.title}
-							descr={obj.descr}
-							complete={obj.complete}
-						/>
-					))}
+					.map(
+						(obj) => (
+							(
+								<Card
+									key={obj.id}
+									id={obj.id}
+									title={obj.title}
+									descr={obj.descr}
+									complete={obj.complete}
+								/>
+							)
+						),
+					)}
 			</div>
 		</div>
 	);

@@ -1,16 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 // начальное состояние
-const baseState = {
+const initialState = {
 	filterState: 'all',
 };
-
-console.log('baseState', baseState);
 
 export const prefix = 'filterBy';
 export const filterSlice = createSlice({
 	name: prefix,
-	initialState: baseState,
+	initialState,
 	reducers: {
 		setFilter: (state, actions) => {
 			return {

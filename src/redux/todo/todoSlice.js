@@ -2,16 +2,14 @@ import { createSlice } from '@reduxjs/toolkit';
 import { nanoid } from 'nanoid';
 
 // начальное состояние
-const baseState = {
+const initialState = {
 	data: [],
 };
-
-console.log('baseState', baseState);
 
 export const prefix = 'todo';
 export const todoSlice = createSlice({
 	name: prefix,
-	initialState: baseState,
+	initialState,
 	reducers: {
 		addTask: (state, actions) => {
 			const todo = {
@@ -36,8 +34,18 @@ export const todoSlice = createSlice({
 				),
 			};
 		},
+		changeTask: (state, actions) => {
+			return {
+				...state,
+				data: state.data.map((task) =>
+					task.id === actions.payload.id
+						? { ...task, title: actions.payload.title, descr: actions.payload.descr }
+						: task,
+				),
+			};
+		},
 	},
 });
 
-export const { addTask, delTask, toggleComplete } = todoSlice.actions;
+export const { addTask, delTask, toggleComplete, changeTask } = todoSlice.actions;
 export const todoReducer = todoSlice.reducer;

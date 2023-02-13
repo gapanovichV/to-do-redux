@@ -9,12 +9,13 @@ import './sass/index.scss';
 
 const App = () => {
 	const [modalActive, setModalActive] = React.useState(false);
+
 	return (
 		<>
 			<SideBar setModalActive={setModalActive} />
 			<Content setModalActive={setModalActive} />
 			<Modal active={modalActive} setActive={setModalActive}>
-				<AddTaskModal setModalActive={setModalActive} />
+				<AddTaskModal/>
 			</Modal>
 		</>
 	);

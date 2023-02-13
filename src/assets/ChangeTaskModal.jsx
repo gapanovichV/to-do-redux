@@ -1,23 +1,22 @@
 import React from 'react';
 
-import { useDispatch } from 'react-redux';
-import { addTask } from '../redux/todo/todoSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeTask } from '../redux/todo/todoSlice';
 
-const AddTaskModal = () => {
+const ChangeTaskModal = ({ id }) => {
 	const dispatch = useDispatch();
-
 	const [title, setTitle] = React.useState('');
 	const [descr, setDescr] = React.useState('');
 
 	const handleClickAdd = () => {
-		dispatch(addTask({ title, descr }));
+		dispatch(changeTask({ id, title, descr }));
 		setDescr('');
 		setTitle('');
 	};
 
 	return (
 		<>
-			<h2>Добавить задачу</h2>
+			<h2>Изменить задача</h2>
 			<div className="modal-add-title">
 				Заголовок
 				<input
@@ -41,4 +40,4 @@ const AddTaskModal = () => {
 	);
 };
 
-export default AddTaskModal;
+export default ChangeTaskModal;
